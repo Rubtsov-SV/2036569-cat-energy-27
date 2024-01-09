@@ -8,6 +8,7 @@ import htmlmin from 'gulp-htmlmin';
 import terser from 'gulp-terser';
 import squoosh from 'gulp-squoosh';
 import svgo from 'gulp-svgo';
+import deploy from 'gulp-gh-pages';
 import {deleteAsync} from 'del';
 
 // Styles
@@ -153,5 +154,5 @@ export default gulp.series (
 
 gulp.task('deploy', function() {
   return gulp.src('./build/**/*')
-  .pipe(ghPages());
+  .pipe(deploy());
 });
