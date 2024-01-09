@@ -148,3 +148,10 @@ export default gulp.series (
     server,
     watcher
 ));
+
+//deploy
+
+gulp.task('deploy', function() {
+  return gulp.src('./build/**/*')
+  .pipe(ghPages());
+});
